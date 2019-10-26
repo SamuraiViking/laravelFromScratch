@@ -1,6 +1,11 @@
 @extends('layout')
 @section('content')
   <h1>Home</h1>
-@endsection
+  <ul>
+        @foreach($tasks as $task)
+            <li>{{ $task }}</li>
+        @endforeach
+  </ul>
+@stop
 
 
