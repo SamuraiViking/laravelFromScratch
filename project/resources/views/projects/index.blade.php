@@ -10,6 +10,7 @@
     @foreach ($projects as $project)
         <li>{{ $project->title }}</li>
     @endforeach
+
     <a href="/projects/create">Create new project</a>
 </body>
 
