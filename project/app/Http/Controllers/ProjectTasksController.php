@@ -10,10 +10,15 @@ class ProjectTasksController extends Controller
     public function update(Task $task)
     {
 
-        $method = request()->has('completed') ? 'complete' : 'incomplete';
-        $task->$method();
+    }
 
-        return back();
-
+    public function store()
+    {
+        // Task::create([
+        //     'project_id' => 5,
+        //     'description' => 'walk the dog',
+        //     'completed' => false,
+        // ]);
+        dd(request()->all());
     }
 }

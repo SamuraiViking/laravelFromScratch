@@ -5,7 +5,7 @@
 <h1 class="title">{{ $project->title }} </h1>
 
 <div class="content"> {{ $project->description }} </div>
-
+s
 <p>
 
     <a href="/projects/{{ $project->id }}/edit">edit</a>
@@ -20,9 +20,12 @@
 
             <div>
 
-                <form method="POST" action="/tasks/{{ $task->id }}">
+                <form method="POST" action="/completed-tasks/{{ $task->id }}">
 
-                    @method('PATCH')
+                    @if($task->completed)
+                        @method('DELETE')
+                    @endif
+
                     @csrf
 
                     <label class="checkbox" for="completed">
@@ -42,6 +45,22 @@
     </div>
 
 @endif
+
+    <div>
+        <form method="POST" action="/projects/{{ $project->id }}/tasks">
+            @csrf
+
+            <label class="label" for="description">Description</label>
+
+            <div class="control">
+
+                <input type="description" name="description" placeholder="Description">
+
+            </div>
+
+            <button type="submit">Create new task</button>
+        </form>
+    </div>
 
 
 

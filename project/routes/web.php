@@ -16,7 +16,10 @@ Route::get('/', function () {
 });
 
 Route::resource('projects', 'ProjectsController');
-Route::patch('/tasks/{task}', 'ProjectTasksController@update');
+
+Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');
+Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
 
 // Route::get('/projects','ProjectsController@index');
 // Route::get('/projects/create','ProjectsController@show');
