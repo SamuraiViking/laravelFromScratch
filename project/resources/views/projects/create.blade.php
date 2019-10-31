@@ -12,9 +12,7 @@
             <input type="text" name="title" placeholder="Project title" value="{{ old('title') }}">
         </div>
         <div>
-            <textarea name="description" placeholder="Project Description">
-                {{ old('description') }}
-            </textarea>
+            <textarea name="description" placeholder="Project Description">{{ old('description') }}</textarea>
         </div>
         <div>
             <button type="sumbit">Create Project</button>
