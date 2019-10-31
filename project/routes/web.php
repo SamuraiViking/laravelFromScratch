@@ -17,7 +17,6 @@ Route::get('/', function () {
 
 Route::resource('projects', 'ProjectsController');
 
-
 // Route::get('/projects','ProjectsController@index');
 // Route::get('/projects/create','ProjectsController@show');
 // Route::get('/projects/{project}', 'ProjectsController@store');

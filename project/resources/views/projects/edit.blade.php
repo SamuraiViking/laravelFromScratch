@@ -33,4 +33,13 @@
         <button type="submit">submit</button>
     </form>
 
+    <form method="POST" action="/projects/{{ $project->id }}">
+
+        @method('DELETE')
+        @csrf
+
+        <button type="submit"> delete </button>
+
+    </form>
+
 @endsection
