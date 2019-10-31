@@ -30,10 +30,7 @@ class ProjectsController extends Controller
     public function store()
     {
 
-        Project::create([
-            'title' => request('title'),
-            'description' => request('description'),
-        ]);
+        Project::create(['title','description']);
 
         return redirect('/projects');
     }
@@ -44,12 +41,10 @@ class ProjectsController extends Controller
     }
     public function update(Project $project)
     {
-
-        $project->title = request('title');
-        $project->description = request('description');
-        $project->save();
+        $project->update(request(['title', 'description']));
 
         return redirect('/projects');
+
     }
     public function destroy(Project $project)
     {
@@ -57,5 +52,6 @@ class ProjectsController extends Controller
         $project -> delete();
 
         return redirect('/projects');
+
     }
 }
